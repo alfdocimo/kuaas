@@ -1,4 +1,3 @@
-
 import Form from "../components/Form";
 import Layout from "../components/Layout";
 import { useState } from "react";
@@ -18,18 +17,16 @@ export default function Home() {
 
   return (
     <Layout>
-      <div className="px-20 py-20">
-        <h1 className="text-4xl mb-20">
-          Send kudos to someone who’s earned it 🎉
-        </h1>
-        <Form
-          name={form.name}
-          onNameChange={(e) => setForm({ ...form, name: e.target.value })}
-          verb={"Amazing"}
-          onVerbChange={(e) => setForm({ ...form, verb: e.target.value })}
-          onSubmit={onSubmit}
-        />
-      </div>
+      <h1 className="text-4xl mb-20">
+        Send kudos to someone who’s earned it 🎉
+      </h1>
+      <Form
+        name={form.name}
+        onNameChange={(e) => setForm({ ...form, name: e.target.value })}
+        verb={"Amazing"}
+        onVerbChange={(e) => setForm({ ...form, verb: e.target.value })}
+        onSubmit={onSubmit}
+      />
     </Layout>
   );
 }

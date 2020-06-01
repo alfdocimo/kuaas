@@ -9,7 +9,9 @@ export default function Layout({ children }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="app-container">
-        <div className="card-container">{children}</div>
+        <div className="card-container">
+          <div className="px-20 py-20">{children}</div>
+        </div>
       </div>
     </>
   );
