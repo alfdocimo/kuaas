@@ -13,6 +13,16 @@ export default function Layout({ children }) {
           <div className="px-20 py-20">{children}</div>
         </div>
       </div>
+      <footer className="h-10 flex items-center justify-center bg-gray-900 text-gray-100">
+        Made with 💛 by
+        <a
+          className="pl-2 text-blue-400"
+          href="https://github.com/alfdocimo"
+          target="_blank"
+        >
+          alfdocimo
+        </a>
+      </footer>
     </>
   );
 }

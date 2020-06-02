@@ -11,7 +11,7 @@ body {
 }
 
 .app-container {
-  @apply flex flex-wrap bg-gray-200 h-48 content-center justify-center h-screen;
+  @apply flex flex-wrap bg-gray-200 h-48 content-center justify-center h-screen -mb-10;
 }
 
 .card-container {
