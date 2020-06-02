@@ -27,7 +27,7 @@ export default function index({ query }) {
         {(data && (
           <>
             <p className="text-2xl">{data && data.message}</p>
-            <img className="mt-20" src={data.imgSrc} />
+            <img className="mt-20 max-w-md" src={data.imgSrc} />
           </>
         )) || <p className="text-2xl">Loading...⌛</p>}
       </section>
