@@ -8,7 +8,6 @@ export default async (req, res) => {
   } = req;
 
   try {
-    console.log("gif", gif);
     const [name, subject] = params;
 
     const isCustomSubject = subject === "custom";
@@ -34,7 +33,6 @@ export default async (req, res) => {
       imgSrc: gif ? giphyData.data.image_original_url : undefined,
     });
   } catch (error) {
-    console.log("error", error);
     res.status(500).json({
       message:
         "Its not you, its us 💔 Something went terribly wrong on our end. Anyway here's a kitty",
