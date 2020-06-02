@@ -12,25 +12,24 @@ export async function getServerSideProps(context) {
 }
 
 export default function index({ query }) {
-  const [name, verb] = query.params;
+  const { params, gif, customMessage, gifTag } = query;
+  const searchParams = new URLSearchParams({ gif, customMessage, gifTag });
+  const [name, subject] = params;
 
-  const { data: localData } = useSWR(
-    `/api/v1/${name}/${verb.toLowerCase()}`,
-    fetcher
-  );
-
-  const { data: giphyData } = useSWR(
-    `https://api.giphy.com/v1/gifs/random?api_key=${process.env.GIPHY_APY_KEY}&tag=congratulations&rating=PG-13`,
+  const { data } = useSWR(
+    `/api/v1/${name}/${subject}?${searchParams && searchParams}`,
     fetcher
   );
 
   return (
     <Layout>
-      <section>
-        <p className="text-2xl">{localData && localData.message} 🙌</p>
-        {giphyData && (
-          <img className="mt-20" src={giphyData.data.image_original_url} />
-        )}
+      <section className="flex flex-col items-center">
+        {(data && (
+          <>
+            <p className="text-2xl">{data && data.message}</p>
+            <img className="mt-20" src={data.imgSrc} />
+          </>
+        )) || <p className="text-2xl">Loading...⌛</p>}
       </section>
     </Layout>
   );

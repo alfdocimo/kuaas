@@ -1,15 +1,44 @@
-import verbs from "./verbs";
+import subjects from "../../../shared/subjects";
+import camelize from "../../../lib/camelize";
+import fetch from "../../../lib/fetch";
 
-export default (req, res) => {
+export default async (req, res) => {
   const {
-    query: { params },
+    query: { params, gif, customMessage, gifTag },
   } = req;
 
-  const [name, verb, index] = params;
+  try {
+    console.log("gif", gif);
+    const [name, subject] = params;
 
-  const verbIndex =
-    (index && index) ||
-    Math.floor(Math.random() * Math.floor(verbs[verb].length));
+    const isCustomSubject = subject === "custom";
 
-  res.status(200).json({ message: verbs[verb][verbIndex](name) });
+    const hasGifTag = (gifTag && gifTag) || "congratulations";
+
+    const camelizedSubject = !isCustomSubject && camelize(subject);
+
+    const giphyData = await fetch(
+      `https://api.giphy.com/v1/gifs/random?api_key=${process.env.GIPHY_APY_KEY}&tag=${hasGifTag}&rating=G`
+    );
+
+    const subjectIndex =
+      !isCustomSubject &&
+      Math.floor(
+        Math.random() * Math.floor(subjects[camelizedSubject].data.length)
+      );
+
+    res.status(200).json({
+      message: isCustomSubject
+        ? `${name}, ${customMessage}`
+        : subjects[camelizedSubject].data[subjectIndex](name),
+      imgSrc: gif ? giphyData.data.image_original_url : undefined,
+    });
+  } catch (error) {
+    console.log("error", error);
+    res.status(500).json({
+      message:
+        "Its not you, its us 💔 Something went terribly wrong on our end. Anyway here's a kitty",
+      imgSrc: "https://http.cat/500",
+    });
+  }
 };
