@@ -43,7 +43,9 @@ export default function Home() {
   return (
     <Layout>
       <div className="tracking-in-expand">
-        <h1 className="md:text-4xl text-xl md:mb-5 mb-2">Kudos as a service</h1>
+        <h1 className="md:text-4xl text-xl md:mb-5 mb-2">
+          Kudos as a service <span className="text-sm">v1.0.0</span>
+        </h1>
         <p className="md:text-xl text-lg md:mb-20 mb-5">
           Send kudos to someone who’s earned it 🎉
         </p>
@@ -57,7 +59,12 @@ export default function Home() {
           onSubmit={onSubmit}
           subjectList={subjectValues}
         />
-        <button className="block w-full text-center text-indigo-400 hover:text-indigo-600" onClick={setDemo}>try an example?</button>
+        <button
+          className="block w-full text-center text-indigo-400 hover:text-indigo-600"
+          onClick={setDemo}
+        >
+          try an example?
+        </button>
       </div>
     </Layout>
   );

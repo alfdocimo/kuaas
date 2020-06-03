@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import Link from "next/link";
 
 export default function Layout({ children }) {
   return (
@@ -39,7 +40,7 @@ export default function Layout({ children }) {
         </div>
       </div>
       <footer className="h-10 flex items-center justify-center bg-gray-900 text-gray-100">
-        Made with 💜 by
+        <p>Made with 💜 by</p>
         <a
           className="pl-2 text-indigo-400 hover:text-indigo-600"
           href="https://github.com/alfdocimo"
@@ -47,6 +48,10 @@ export default function Layout({ children }) {
         >
           alfdocimo
         </a>
+        <span className="pl-2">|</span>
+        <div className="pl-2 text-teal-400 hover:text-teal-600">
+          <Link href="/docs">API</Link>
+        </div>
       </footer>
     </>
   );
