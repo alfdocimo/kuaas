@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import fetcher from "../../lib/fetch";
+import copyUrlToClipboard from "../../lib/copyUrlToClipboard";
 import useSWR from "swr";
 import Layout from "../../components/Layout";
 import Link from "next/link";
@@ -15,7 +16,9 @@ export async function getServerSideProps(context) {
 }
 
 export default function index({ query }) {
+  const urlToClipboard = "Copy URL to clipboard";
   const [shareUrl, setShareUrl] = useState("");
+  const [copyText, setCopyText] = useState(urlToClipboard);
   const title = "Kudos from kuaas.com 🙌 ";
 
   const { params, gif, customMessage, gifTag } = query;
@@ -31,6 +34,13 @@ export default function index({ query }) {
     setShareUrl(window.location.href);
   }, []);
 
+  const handleCopyUrlToClipboard = () => {
+    setCopyText("Copied! ✅");
+    copyUrlToClipboard();
+
+    setTimeout(() => setCopyText(urlToClipboard), 2000);
+  };
+
   return (
     <Layout>
       {(data && (
@@ -39,6 +49,13 @@ export default function index({ query }) {
           <img className="w-full mt-4 md:max-w-lg" src={data.imgSrc} />
 
           <ShareSocial url={shareUrl} title={title} />
+
+          <button
+            className="mt-4 text-indigo-400 hover:text-indigo-600"
+            onClick={handleCopyUrlToClipboard}
+          >
+            {copyText}
+          </button>
 
           <div className="mt-4 text-indigo-400 hover:text-indigo-600">
             <Link href="/">Go back</Link>
