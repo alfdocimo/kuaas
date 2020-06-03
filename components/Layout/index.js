@@ -9,7 +9,7 @@ export default function Layout({ children }) {
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta
           name="description"
-          content="Here is a precise description of my awesome webpage."
+          content="Send kudos messages along with a gif to the people you care about!"
         />
         <meta name="robots" content="index, follow" />
         <link rel="icon" href="/favicon.ico" />
