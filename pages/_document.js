@@ -11,16 +11,20 @@ class MyDocument extends Document {
       <Html lang={this.props.lang || "en"}>
         <Head>
           <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=UA-168379962-1"
+          />
+
+          <script
             dangerouslySetInnerHTML={{
               __html: `
-              <script async src="https://www.googletagmanager.com/gtag/js?id=UA-168379962-1"></script>
-              <script>
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-              
-                gtag('config', 'UA-168379962-1');
-              </script>
+               
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  
+                  gtag('config', 'UA-168379962-1');
+                 
               `,
             }}
           />
