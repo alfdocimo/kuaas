@@ -1,9 +1,10 @@
 .btn {
   @apply font-bold py-2 px-4 rounded;
 }
-.btn-blue {
-  @apply bg-blue-500 text-white;
+.btn-primary {
+  @apply bg-indigo-700 text-white;
+  transition: background 0.2s ease-in-out;
 }
-.btn-blue:hover {
-  @apply bg-blue-700;
+.btn-primary:hover {
+  @apply bg-indigo-800;
 }

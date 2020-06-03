@@ -47,7 +47,7 @@ export default function Form({
           />
         </div>
         <div className="w-full md:w-1/4 px-3 mb-6 md:mb-0">
-          <button className="form-btn" type="button" onClick={onSubmit}>
+          <button className="form-btn btn-primary" type="button" onClick={onSubmit}>
             Kudos!
           </button>
         </div>

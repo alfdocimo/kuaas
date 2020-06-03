@@ -6,7 +6,14 @@ export default function Layout({ children }) {
     <>
       <Head>
         <title>Kuaas | Kudos as a service</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta
+          name="description"
+          content="Here is a precise description of my awesome webpage."
+        />
+        <meta name="robots" content="index, follow" />
         <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <div className="flex flex-wrap bg-gray-200 content-center justify-center md:h-screen md:-mb-10">
         <div

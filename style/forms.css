@@ -1,17 +1,11 @@
-.form-label {
-  @apply block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2;
+.form-base {
+  @apply appearance-none block w-full;
 }
 
 .form-input {
-  @apply appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight;
+  @apply form-base bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight;
 }
 
 .form-btn {
-  @apply appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight;
-  background: #000; /* TODO define design tokens */
-  color: white;
-}
-
-.form-select {
-  @apply block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight;
+  @apply form-base rounded py-3 px-4 leading-tight;
 }

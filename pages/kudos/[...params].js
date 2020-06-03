@@ -26,7 +26,7 @@ export default function index({ query }) {
       {(data && (
         <div className="h-full flex flex-col items-center justify-around">
           <p className="md:text-2xl text-xl">{data && data.message}</p>
-          <img className="w-full mt-4" src={data.imgSrc} />
+          <img className="w-full mt-4 md:max-w-lg" src={data.imgSrc} />
         </div>
       )) || <p className="text-2xl">Loading...⌛</p>}
     </Layout>
