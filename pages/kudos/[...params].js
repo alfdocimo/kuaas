@@ -23,14 +23,12 @@ export default function index({ query }) {
 
   return (
     <Layout>
-      <section className="flex flex-col items-center">
-        {(data && (
-          <>
-            <p className="text-2xl">{data && data.message}</p>
-            <img className="mt-20 max-w-md min-w-md" src={data.imgSrc} />
-          </>
-        )) || <p className="text-2xl">Loading...⌛</p>}
-      </section>
+      {(data && (
+        <div className="h-full flex flex-col items-center justify-around">
+          <p className="md:text-2xl text-xl">{data && data.message}</p>
+          <img className="w-full mt-4" src={data.imgSrc} />
+        </div>
+      )) || <p className="text-2xl">Loading...⌛</p>}
     </Layout>
   );
 }

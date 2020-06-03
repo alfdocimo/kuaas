@@ -34,8 +34,10 @@ export default function Home() {
 
   return (
     <Layout>
-      <h1 className="text-4xl mb-5">Kudos as a service</h1>
-      <p className="text-xl mb-20">Send kudos to someone who’s earned it 🎉</p>
+      <h1 className="md:text-4xl text-xl md:mb-5 mb-2">Kudos as a service</h1>
+      <p className="md:text-xl text-lg md:mb-20 mb-5">
+        Send kudos to someone who’s earned it 🎉
+      </p>
       <Form
         name={form.name}
         gifTag={form.gifTag}
