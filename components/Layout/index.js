@@ -35,9 +35,9 @@ export default function Layout({ children }) {
         </div>
       </div>
       <footer className="h-10 flex items-center justify-center bg-gray-900 text-gray-100">
-        Made with 💛 by
+        Made with 💜 by
         <a
-          className="pl-2 text-blue-400"
+          className="pl-2 text-indigo-400 hover:text-indigo-600"
           href="https://github.com/alfdocimo"
           target="_blank"
         >

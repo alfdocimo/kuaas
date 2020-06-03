@@ -2,6 +2,7 @@ import React from "react";
 import fetcher from "../../lib/fetch";
 import useSWR from "swr";
 import Layout from "../../components/Layout";
+import Link from "next/link";
 
 export async function getServerSideProps(context) {
   return {
@@ -27,6 +28,9 @@ export default function index({ query }) {
         <div className="h-full flex flex-col items-center justify-around">
           <p className="md:text-2xl text-xl">{data && data.message}</p>
           <img className="w-full mt-4 md:max-w-lg" src={data.imgSrc} />
+          <div className="mt-4 text-indigo-400 hover:text-indigo-600">
+            <Link href="/">Go back</Link>
+          </div>
         </div>
       )) || <p className="text-2xl">Loading...⌛</p>}
     </Layout>
