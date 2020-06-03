@@ -15,13 +15,17 @@ export default function Layout({ children }) {
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <div className="flex flex-wrap bg-gray-200 content-center justify-center md:h-screen md:-mb-10">
+      <div
+        className="flex flex-wrap bg-gray-200 content-center 
+      min-h-screen min-w-screen
+      justify-center lg:-mb-10"
+      >
         <div
-          className="rounded overflow-hidden shadow-lg bg-gray-100 flex items-center
+          className="rounded shadow-lg bg-gray-100 flex items-center
         md:h-screen md:w-screen 
-        sm:h-screen sm:w-screen 
+        sm:h-full sm:w-full 
         lg:h-auto lg:w-auto
-        h-screen w-screen
+        h-full w-full
         "
         >
           <div
