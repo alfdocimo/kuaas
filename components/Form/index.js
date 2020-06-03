@@ -3,6 +3,7 @@ export default function Form({
   name,
   onNameChange,
   onSubjectChange,
+  subject,
   onSubmit,
   onGifTagChange,
   gifTag
@@ -32,6 +33,7 @@ export default function Form({
               className="form-input"
               placeholder="Subject"
               onChange={onSubjectChange}
+              value={subject}
             />
             <datalist id="subjects">{renderSubjectList(subjectList)}</datalist>
           </div>

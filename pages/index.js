@@ -28,6 +28,14 @@ export default function Home() {
     });
   }
 
+  function setDemo() {
+    setForm({
+      name: "John Doe",
+      subject: "Great Work",
+      gifTag: "congratulations",
+    });
+  }
+
   const subjectValues = Object.keys(subjects).map(
     (subject) => subjects[subject].value
   );
@@ -42,12 +50,14 @@ export default function Home() {
         <Form
           name={form.name}
           gifTag={form.gifTag}
+          subject={form.subject}
           onNameChange={(e) => setForm({ ...form, name: e.target.value })}
           onSubjectChange={(e) => setForm({ ...form, subject: e.target.value })}
           onGifTagChange={(e) => setForm({ ...form, gifTag: e.target.value })}
           onSubmit={onSubmit}
           subjectList={subjectValues}
         />
+        <button className="block w-full text-center text-indigo-400 hover:text-indigo-600" onClick={setDemo}>try an example?</button>
       </div>
     </Layout>
   );
