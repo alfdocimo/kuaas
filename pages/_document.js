@@ -14,6 +14,11 @@ class MyDocument extends Document {
             async
             src="https://www.googletagmanager.com/gtag/js?id=UA-168379962-1"
           />
+          <script
+            data-ad-client="ca-pub-5639684134726866"
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          />
 
           <script
             dangerouslySetInnerHTML={{

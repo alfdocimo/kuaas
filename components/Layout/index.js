@@ -9,12 +9,26 @@ export default function Layout({ children }) {
         <title>Kuaas | Kudos as a service</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta
+          http-equiv="Content-Type"
+          content="text/html; charset=ISO-8859-1"
+        />
+        <meta
           name="description"
           content="Send kudos messages along with a gif to the people you care about!"
         />
+        <meta
+          name="keywords"
+          content="kudos, service, api, kuaas, messages, giphy, react,web app, alfdocimo, positive, congratulations"
+        />
         <meta name="robots" content="index, follow" />
-        <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+
+        <meta name="twitter:card" value="summary" />
+
+        <meta property="og:type" content="article" />
+        <meta property="og:image" content="/og-card.png" />
+
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <div
         className="flex flex-wrap bg-gray-200 content-center 
